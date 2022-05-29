@@ -9,18 +9,19 @@ package com.mycompany.financialcalc;
  * @author Kashif Saeed
  */
 public class FinancialCalc {
+      double computeFinalValue(double principle, double interestRate, int numOfYears)
+{
+    double finalValue = 0.0;
+    finalValue = principle * Math.pow((1 + interestRate), numOfYears);
+    return finalValue;
+}
+    
     public static void main(String[] args){
-        double principle=30000.0;
         
-        double interestRate = 0.035;
-        int numOfYears = 7;
-        
-        double finalValue = 0.0;
-        finalValue = principle * Math.pow((1 + interestRate), numOfYears);
-        System.out.println("Investing $"
-                + principle + "\n At an inetersr rate of " +
-                (interestRate*100) + "$" + "\n For "+ numOfYears + " Years "+
-                "\n Will have a final worth of "+ finalValue);
+        FinancialCalc obj = new FinancialCalc();
+        System.out.println("Hence the finalValue is" + obj.computeFinalValue(50.0, 0.3, 4));
         
     }
+
+ 
 }
